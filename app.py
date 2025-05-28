@@ -10,7 +10,7 @@ import os
 # 스타일 설정
 st.set_page_config(page_title="SNS 중독 분석 시스템", layout="wide")
 
-# 데이터 불러오기 (루트 기준)
+# ================== 데이터 불러오기 ==================
 df = pd.read_csv("data/Students_Social_Media_Addiction.csv")
 
 st.title("📱 SNS 중독 분석 및 예측 시스템")
@@ -82,7 +82,7 @@ with tab1:
 with tab2:
     st.header("🧠 SNS 중독 상태 예측 + 코칭 피드백")
 
-    # 모델 불러오기 (루트 기준)
+    # 모델 불러오기
     MODEL_DIR = "models"
     clf = joblib.load(os.path.join(MODEL_DIR, "addiction_classifier.pkl"))
     reg = joblib.load(os.path.join(MODEL_DIR, "addiction_regressor.pkl"))
