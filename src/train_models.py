@@ -14,7 +14,7 @@ from sklearn.linear_model import LinearRegression
 path = kagglehub.dataset_download("adilshamim8/social-media-addiction-vs-relationships")
 print("Path to dataset files:", path)
 
-csv_path = os.path.join(path, "Students Social Media Addiction.csv")
+csv_path = os.path.join(path, "Students_Social_Media_Addiction.csv")
 df = pd.read_csv(csv_path)
 
 # 수치형 컬럼

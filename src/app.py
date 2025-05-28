@@ -5,12 +5,13 @@ import seaborn as sns
 import joblib
 from sklearn.preprocessing import StandardScaler
 from sklearn.cluster import KMeans
+import os
 
 # 스타일 설정
 st.set_page_config(page_title="SNS 중독 분석 시스템", layout="wide")
 
 # 데이터 불러오기
-df = pd.read_csv("Students Social Media Addiction.csv")
+df = pd.read_csv(os.path.join("..", "data", "Students_Social_Media_Addiction.csv"))
 
 st.title("📱 SNS 중독 분석 및 예측 시스템")
 
@@ -82,9 +83,10 @@ with tab2:
     st.header("🧠 SNS 중독 상태 예측 + 코칭 피드백")
 
     # 모델 불러오기
-    clf = joblib.load("addiction_classifier.pkl")
-    reg = joblib.load("addiction_regressor.pkl")
-    le = joblib.load("label_encoder.pkl")
+    MODEL_DIR = os.path.join("..", "models")
+    clf = joblib.load(os.path.join(MODEL_DIR, "addiction_classifier.pkl"))
+    reg = joblib.load(os.path.join(MODEL_DIR, "addiction_regressor.pkl"))
+    le = joblib.load(os.path.join(MODEL_DIR, "label_encoder.pkl"))
 
     st.markdown("아래 항목을 입력하면 당신의 중독 상태를 예측하고 개선 방법을 제안합니다.")
 

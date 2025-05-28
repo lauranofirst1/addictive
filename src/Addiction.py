@@ -3,9 +3,10 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.preprocessing import StandardScaler
 from sklearn.cluster import KMeans
+import os
 
 # 1) 데이터 불러오기
-df = pd.read_csv("Students Social Media Addiction.csv")
+df = pd.read_csv(os.path.join("..", "data", "Students_Social_Media_Addiction.csv"))
 
 # 2) 사용할 수치형 컬럼
 numeric_cols = [
