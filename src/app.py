@@ -11,7 +11,7 @@ import os
 st.set_page_config(page_title="SNS 중독 분석 시스템", layout="wide")
 
 # 데이터 불러오기
-df = pd.read_csv(os.path.join("..", "data", "Students_Social_Media_Addiction.csv"))
+df = pd.read_csv("data/Students_Social_Media_Addiction.csv")
 
 st.title("📱 SNS 중독 분석 및 예측 시스템")
 
